@@ -5,22 +5,6 @@ This is a Vagrant Box with some development stack to create new development envi
 ## OS: 
   'ubuntu/zesty64' # 17.04
 
-### Settings for Ruby on Rails
-  1.RVM   1.26.11
-  2.Ruby  2.4.1
-  3.Rails 4.2.1
-
-### Postgres
-  Todo 
-
-## Elastic Stack
-  Elasticsearch 1.4
-  Kibana        3.1.2
-  Logstash      1.4
-
-### Settings for Anaconda  
-  Todo
-
 ## Installation
 
 1. Install [VirtualBox](http://www.virtualbox.org/)
@@ -42,3 +26,20 @@ This is a Vagrant Box with some development stack to create new development envi
 
     ```
     vagrant ssh
+    ```
+### Settings for Ruby on Rails
+  1.RVM   1.26.11
+  2.Ruby  2.4.1
+  3.Rails 4.2.1
+
+### Postgres
+  Todo 
+
+## Elastic Stack
+  Elasticsearch 1.4
+  Kibana        3.1.2
+  Logstash      1.4
+
+### Settings for Anaconda  
+  Todo
+
