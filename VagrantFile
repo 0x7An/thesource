@@ -12,18 +12,21 @@ Vagrant.configure('2') do |config|
   
   config.vm.synced_folder ".", "/research"
   
-  # Set Ruby on Rails
+  # Set Anaconda
   config.vm.network :forwarded_port, guest: 8888, host: 8888
+  
+  # Set Ruby on Rails
   config.vm.network :forwarded_port, guest: 3000, host: 3000
   config.vm.provision :shell, path: 'rails.sh', keep_color: true
   
   # Set Elastic Search Stack
-  config.vm.provision :shell, path: 'elk.sh', keep_color: true
+  # config.vm.provision :shell, path: 'elk.sh', keep_color: true
 
   # Set Angular cli
-  config.vm.network "private_network", ip: "192.168.100.100"
-  config.vm.network "forwarded_port", guest: 4200, host: 4200
-  config.vm.network "forwarded_port", guest: 49152, host: 49152
+  #config.vm.network "private_network", ip: "192.168.100.100"
+  #config.vm.network "forwarded_port", guest: 4200, host: 4200
+  #config.vm.network "forwarded_port", guest: 49152, host: 49152
+  
   config.ssh.password = 'ubuntu'
 
   # Settings for provider
