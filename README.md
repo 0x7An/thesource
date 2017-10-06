@@ -14,3 +14,5 @@ This is a Vagrant Box with my daily development stack to create new development 
   Elasticsearch 1.4
   Kibana        3.1.2
   Logstash      1.4
+
+:runner:
