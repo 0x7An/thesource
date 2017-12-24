@@ -4,35 +4,23 @@ Vagrant.configure('2') do |config|
   
   # Box Settings
   config.vm.box      = 'ubuntu/zesty64' # 17.04
-  config.vm.hostname = 'dev-box'
-  config.vm.post_up_message  = 'Warp drive!'
-  
+  config.vm.hostname = 'fullstackbr'
+  config.ssh.username = 'anderson'
+  config.vm.post_up_message  = ' You taked the red pill!'
+
   # Shell script to install developer enviroment
   config.vm.provision :shell, path: 'bootstrap.sh', keep_color: true
   
-  config.vm.synced_folder ".", "/research"
-  
-  # Set Anaconda
+  config.vm.synced_folder "./research", "/research"
   config.vm.network :forwarded_port, guest: 8888, host: 8888
-  
-  # Set Ruby on Rails
   config.vm.network :forwarded_port, guest: 3000, host: 3000
   config.vm.network :forwarded_port, guest: 4000, host: 4000
-  config.vm.provision :shell, path: 'rails.sh', keep_color: true
-  
-  # Set Elastic Search Stack
-  # config.vm.provision :shell, path: 'elk.sh', keep_color: true
 
-  # Set Angular cli
-  #config.vm.network "private_network", ip: "192.168.100.100"
-  #config.vm.network "forwarded_port", guest: 4200, host: 4200
-  #config.vm.network "forwarded_port", guest: 49152, host: 49152
-  
   # Settings for provider
   config.vm.provider 'virtualbox' do |v|
    # v.gui = true
-	v.name = "TheSource"
-    v.memory = 2048
+	v.name = "fullstackbr"
+    v.memory = 4048
     v.cpus = 2
   end
 end
