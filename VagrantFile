@@ -7,6 +7,7 @@ Vagrant.configure('2') do |config|
   config.vm.hostname = 'fullstackbr'
   config.ssh.username = 'anderson'
   config.vm.post_up_message  = ' You taked the red pill!'
+  config.ssh.insert_key = false
 
   # Shell script to install developer enviroment
   config.vm.provision :shell, path: 'bootstrap.sh', keep_color: true
